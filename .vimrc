@@ -14,10 +14,6 @@ call dein#begin('$HOME/.cache/dein')
 " Required:
 call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-" Add or remove your plugins here like this:
-" call dein#add('Shougo/neosnippet.vim')
-" call dein#add('Shougo/neosnippet-snippets')
-
 " Ddc:
 call dein#add('Shougo/ddc.vim')
 call dein#add('vim-denops/denops.vim')
