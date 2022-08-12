@@ -1,0 +1,36 @@
+# ===============
+# Ddc
+# ===============
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+repo = 'vim-denops/denops.vim'
+repo = 'Shougo/ddc-around' # filter
+repo = 'Shougo/ddc-matcher_head' # filter
+repo = 'Shougo/ddc-sorter_rank' # filter
+repo = 'Shougo/ddc-nextword' # source
+
+hook_source = '''
+    call ddc#custom#patch_global('sources', ['around', 'nextword'])
+    call ddc#custom#patch_global('sourceOptions', {
+        \ 'around': {'mark': 'A'},
+        \ 'nextword': {'mark': 'nextword'},
+        \ '_': {
+        \   'matchers': ['matcher_head'],
+        \   'sorters': ['sorter_rank']},
+        \ })
+    call ddc#enable()
+'''
+
+
+# ===============
+# Indent
+# ===============
+repo = 'Yggdroot/indentLine'
+
+hook_source = '''
+    let g:indentLine_setColors = 0
+    let g:indentLine_color_term =239
+    let g:indentLine_color_gui = '#A4E57E'
+    let g:indentLine_char = '¦'
+'''
+

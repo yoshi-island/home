@@ -5,45 +5,22 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+let s:dein_dir = expand($HOME . '/.vim/dein')
 
 " Required:
-call dein#begin('$HOME/.cache/dein')
+call dein#begin(s:dein_dir)
 
 " Let dein manage dein
 " Required:
-call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+call dein#add(s:dein_dir . '/repos/github.com/Shougo/dein.vim')
 
-" Ddc:
-call dein#add('Shougo/ddc.vim')
-call dein#add('vim-denops/denops.vim')
-call dein#add('Shougo/ddc-around') " filter
-call dein#add('Shougo/ddc-matcher_head') " filter
-call dein#add('Shougo/ddc-sorter_rank') " filter
-call dein#add('Shougo/ddc-nextword') " source
-
-" Indent:
-call dein#add('Yggdroot/indentLine')
+" LoadTomlFile:
+let s:toml = s:dein_dir . '/dein.toml'
+call dein#load_toml(s:toml, {'lazy': 0})
 
 " Required:
 call dein#end()
-
-" Ddc:
-call ddc#custom#patch_global('sources', ['around', 'nextword'])
-call ddc#custom#patch_global('sourceOptions', {
-      \ 'around': {'mark': 'A'},
-      \ 'nextword': {'mark': 'nextword'},
-      \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank']},
-      \ })
-call ddc#enable()
-
-" Indentline:
-let g:indentLine_setColors = 0
-let g:indentLine_color_term =239
-let g:indentLine_color_gui = '#A4E57E'
-let g:indentLine_char = '¦'
 
 " Required:
 filetype plugin indent on
