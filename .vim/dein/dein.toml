@@ -41,3 +41,8 @@ hook_source = '''
 repo = 'nvie/vim-flake8'
 on_ft = 'python'
 
+
+# ===============
+# black
+# ===============
+repo = 'psf/black'
