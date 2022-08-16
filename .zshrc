@@ -190,3 +190,7 @@ fi
 ## nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+########################################
+## python lint check
+alias pcheck='$HOME/scripts/python_lint.sh'
+
